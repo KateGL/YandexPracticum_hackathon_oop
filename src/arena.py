@@ -20,13 +20,16 @@ class Arena:
 
 def start_single_fight(character_1: Character, character_2: Character) -> None:
     """Начинает поединок между двумя бойцами и выводит победителя."""
+    round = 1
     while character_1.is_alive() or character_2.is_alive():
         char_1_initiative, char_2_initiative = character_1.initiative(), character_2.initiative()
+        round += 1
+        print(f'Раунд: {round}')
         if char_1_initiative > char_2_initiative:
             character_1.attack(character_2)
         else:
             character_1.recieve_damage(character_2)
         if character_1.is_alive() is False:
-            return print(f'{character_2.character_name} победил!')
+            return print(f'Бой окончен {character_2.character_name} победил!')
         elif character_2.is_alive() is False:
-            return print(f'{character_1.character_name} победил!')
+            return print(f'Бой окончен {character_1.character_name} победил!')

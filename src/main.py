@@ -7,7 +7,6 @@ def announce_fighter(color, participant, inventory):
     print('---------------------------------------')
     print(f"{color} fighter:")
     participant.show_character_stats()
-    inventory = participant.generate_inventory()
     participant.show_character_inventory(inventory)
     print('---------------------------------------')
 

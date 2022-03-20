@@ -56,14 +56,16 @@ class Character:  # Person
         damage_dealt = (self.base_damage - (self.base_damage * opponent.base_armor / 100))
         opponent.health_points -= damage_dealt
         print(f'{self.character_name} наносит удар по {opponent.character_name} на {damage_dealt:.2f} урона')
-        print(f'Очков здоровья осталось {opponent.character_name}: {opponent.health_points:.2f}')
+        print(f'Очков здоровья осталось у {opponent.character_name}: {opponent.health_points:.2f}')
+        print('---------------------------------------')
 
     def recieve_damage(self, opponent) -> None:
         """Рассчитывает полученный урон и отнимает очки здоровья у персонажа."""
         damage_dealt = (opponent.base_damage - (opponent.base_damage * self.base_armor / 100))
         self.health_points -= damage_dealt
         print(f'{opponent.character_name} наносит удар по {self.character_name} на {damage_dealt:.2f} урона')
-        print(f'Очков здоровья осталось {self.character_name}: {self.health_points:.2f}')
+        print(f'Очков здоровья осталось у {self.character_name}: {self.health_points:.2f}')
+        print('---------------------------------------')
 
 
 class Paladin(Character):

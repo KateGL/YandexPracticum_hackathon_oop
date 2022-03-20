@@ -19,8 +19,8 @@ class Item:  # Things
                                 'Health Bonus: {health}'
                                 )
 
-    def show_thing_info(self) -> str:
-        """Форматирует информационное сообщение."""
+    def show_item_info(self) -> str:
+        """Форматирует информационное сообщение о предмете."""
         return self.ITEM_INFO.format(**asdict(self))
 
 
@@ -28,8 +28,8 @@ class Inventory:
     def __init__(self, items: List[Item]):
         self.items = items
 
-    def show_inventory(self):
-        """Форматирует информационное сообщение."""
+    def show_inventory(self) -> None:
+        """Выводит информационное сообщение об инвентаре персонажа."""
         item_names = [item.name for item in self.items]
         item_damage = [item.damage for item in self.items]
         item_armor = [item.armor for item in self.items]
@@ -47,7 +47,8 @@ class Inventory:
         print(inventory_info)
 
 
-def generate_item():
+def generate_item() -> Item:
+    """Создает случайный предмет."""
     item_name = None
     item_armor = 0
     item_damage = 0
