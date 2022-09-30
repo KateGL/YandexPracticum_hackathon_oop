@@ -1,4 +1,4 @@
-# ya_36_hack_oop
+# YandexPracticum_hackathon_oop
 
 ### хакатон по ООП в Яндекс.Практикуме 20.03.22
 
